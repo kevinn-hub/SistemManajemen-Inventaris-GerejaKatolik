@@ -87,7 +87,7 @@ if (isset($_POST['Username'])) {
 
               if ($userquery['Role'] == 'admin') {
                   header("location:index.php");
-              } else if ($userquery['Role'] == 'guru' || $userquery['Role'] == 'siswa') {
+              } else if ($userquery['Role'] == 'pengurus' || $userquery['Role'] == 'anggota') {
                   if ($userquery['Password'] == '1234') {
                       header("Location: index.php?page=ganti_password");
                   } else {

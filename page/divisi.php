@@ -1,9 +1,8 @@
-
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Data Guru</h1>
+                <h1 class="m-0 text-dark">Data Divisi</h1>
             </div>
         </div>
     </div>
@@ -12,13 +11,13 @@
 <?php
 if (isset($_GET['action'])) {
     if ($_GET['action'] == "hapus") {
-        $kd = $_GET['kd'];
-        $query = mysqli_query($koneksi, "DELETE FROM tbl_guru where kd_guru = '$kd' ");
+        $id = $_GET['id'];
+        $query = mysqli_query($koneksi, "DELETE FROM tbl_divisi where id_divisi = '$id' ");
         if ($query) {
             echo '
             <div class="alert alert-warning alert-dismissible">
             Berhasil Di Hapus</div>';
-            echo '<meta http-equiv="refresh" content="1;url=index.php?page=guru">';
+            echo '<meta http-equiv="refresh" content="1;url=index.php?page=divisi">';
         }
     }
 }
@@ -27,41 +26,39 @@ if (isset($_GET['action'])) {
     <div class="container-fluid">
     <div class="card">
         <div class="card-body">
-            <a href="index.php?page=tambah_guru" class="btn btn-primary btn-sm">
-                Tambah Guru</a>
+            <a href="index.php?page=tambah_divisi" class="btn btn-primary btn-sm">
+                Tambah Divisi</a>
             <table class="table table-striped">
                 <tread>
                     <tr>
                         <th>NO</th>
-                        <th>KD GURU</th>
-                        <th>NAMA GURU</th>
-                        <th>JENIS KELAMIN</th>
-                        <th>PENDIDIKAN TERAKHIR</th>
-                        <th>HP</th>
-                        <th>ALAMAT</th>
+                        <th>ID DIVISI</th>
+                        <th>NAMA DIVISI</th>
+                        <th>PENANGGUNG JAWAB</th>
+                        <th>STATUS</th>
+                        <th>KETERANGAN</th>
                         <th>Aksi</th>
                     </tr>
                 </tread>
                 <?php
                 $no = 0;
-                $query = mysqli_query($koneksi, "SELECT * FROM tbl_guru");
+                $query = mysqli_query($koneksi, "SELECT * FROM tbl_divisi");
                 while ($result = mysqli_fetch_array($query)) {
                     $no++
                 ?>
                 <tbody>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $result['kd_guru']; ?></td>
-                        <td><?= $result['nm_guru']; ?></td>
-                        <td><?= $result['jenkel']; ?></td>
-                        <td><?= $result['pend_terakhir']; ?></td>
-                        <td><?= $result['hp']; ?></td>
-                        <td><?= $result['alamat']; ?></td>
+                        <td><?= $result['id_divisi']; ?></td>
+                        <td><?= $result['nama_divisi']; ?></td>
+                        <td><?= $result['penanggung_jawab']; ?></td>
+                        <td><?= $result['status']; ?></td>
+                        <td><?= $result['keterangan']; ?></td>
                         <td>
-                            <a href="index.php?page=guru&action=hapus&kd=<?= $result['kd_guru'] ?>" title="">
+                            <a href="index.php?page=divisi&action=hapus&id=<?= $result['id_divisi'] ?>" title="">
                                 <span class="badge badge-danger">Hapus</span>
                             </a>
-                            <a href="index.php?page=edit_guru&kd=<?= $result['kd_guru'] ?>" title="">
+                            <a href="index.php?page=edit_divisi&id=<?= $result['id_divisi'] ?>" title="">
                                 <span class="badge badge-warning">Edit</span>
                             </a>
                         </td>

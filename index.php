@@ -71,7 +71,7 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="index3.html" class="brand-link"><img src="dist/img/Logo-Gereja.jpg" alt="Logo Gereja" class="brand-image img-circle elevation-3" style="width:40px; height:40px; object-fit:cover;">
+      <a href="index3.html" class="brand-link"><img src="dist/img/Logo-Gereja1.jpg" alt="Logo Gereja" class="brand-image img-circle elevation-3" style="width:40px; height:40px; object-fit:cover;">
       <span class="brand-text font-weight-light" style="font-size:18px;"> Gereja Santa Bernadeth</span>
       </a>
 
@@ -116,9 +116,9 @@
                 <?php if($_SESSION['Role']=="admin"){ ?>
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="index.php?page=guru" class="nav-link">
+                  <a href="index.php?page=divisi" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Guru</p>
+                    <p>divisi</p>
                   </a>
                 </li>
 
@@ -144,7 +144,7 @@
                   </li>
                   <?php } ?>
               
-                <?php if($_SESSION['Role']=="guru"){ ?>
+                <?php if($_SESSION['Role']=="pengurus"){ ?>
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="#" class="nav-link">
@@ -175,7 +175,7 @@
                     </li>
                 <?php } ?>
 
-                <?php if($_SESSION['Role']=="siswa"){ ?>
+                <?php if($_SESSION['Role']=="anggota"){ ?>
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="#" class="nav-link">
