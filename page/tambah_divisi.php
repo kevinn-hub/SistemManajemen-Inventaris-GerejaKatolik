@@ -9,15 +9,16 @@
 </div>
 
 <?php
-$carikode = mysqli_query($koneksi,"select max(id_divisi) from tbl_divisi") or die(mysqli_error());
+$carikode = mysqli_query($koneksi, "select max(id_divisi) from tbl_divisi") or die(mysqli_error());
 $datakode = mysqli_fetch_array($carikode);
 
 if($datakode){
-    $nilaikode = substr($datakode[0], 2);
-    $kode = (int) $nilaikode;
+    $kode = (int)$datakode[0];
     $kode = $kode + 1;
-    $hasilkode = "".str_pad($kode, 3, "0", STR_PAD_LEFT);
-} else {$hasilkode = ""; }
+    $hasilkode = str_pad($kode, 3, "0", STR_PAD_LEFT);
+}else{
+    $hasilkode = "001";
+}
 $_SESSION['KODE'] = $hasilkode;
 
 if(isset($_POST['tambah'])){
@@ -26,7 +27,7 @@ if(isset($_POST['tambah'])){
   $penanggung_jawab = $_POST['penanggung_jawab'];
   $status           = $_POST['status'];
   $keterangan       = $_POST['keterangan'];
-    $insert = mysqli_query($koneksi,"INSERT INTO tbl_divisi values ('$id_divisi', '$nama_divisi','$penanggung_jawab','$status','$keterangan')"); 
+    $insert = mysqli_query($koneksi,"INSERT INTO tbl_divisi values ('$id_divisi','$nama_divisi','$penanggung_jawab','$status','$keterangan')"); 
     if ($insert) {
         echo '<div class="alert alert-info-dismissible">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -89,10 +90,10 @@ if(isset($_POST['tambah'])){
 
                     <div class="form-group">
                         <label>Status</label>
-                        <select name="status" class="form-control" required>
+                        <select class="form-control" name="status" id="status" placeholder="status">
                             <option value="">-- Pilih Status --</option>
-                            <option value="Aktif">Aktif</option>
-                            <option value="Tidak Aktif">Tidak Aktif</option>
+                            <option value="aktif">Aktif</option>
+                            <option value="tidak Aktif">Tidak Aktif</option>
                         </select>
                     </div>
 
