@@ -34,14 +34,6 @@ if(isset($_POST['tambah'])){
     }
 }
 ?>
-
-<section class="content">
-    <div class="container-fluid">
-        <div class="card">
-            <div class="card-body">
-                <div class="card-body p-2">
-                    <form method="POST" action="">
-
 <section class="content">
     <div class="container-fluid">
         <div class="card">
@@ -49,30 +41,58 @@ if(isset($_POST['tambah'])){
                 <div class="card-body p-2">
                     <form method="POST" action="">
                         
-                        <div class="form-group">
-                            <label for="id_divisi">Kode Divisi</label>
-                            <input type="text" name="id_divisi" value="<?= $edit['id_divisi']; ?>" class="form-control" readonly>
-                        </div>
+                    <div class="form-group">
+                        <label>ID Divisi</label>
+                        <input type="text" name="id_divisi" value="<?= $edit['id_divisi']; ?>" class="form-control" readonly>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="nama_divisi">Nama Divisi</label>
-                            <input type="text" name="nama_divisi" value="<?= $edit['nama_divisi']; ?>" id="nama_divisi" placeholder="Nama Divisi" class="form-control">
-                        </div>
+                    <div class="form-group">
+                        <label>Nama Divisi</label>
+                        <select class="form-control" name="nama_divisi">
+                            <option value="Liturgi" <?= ($edit['nama_divisi']=='Liturgi')?'selected':''; ?>>Liturgi</option>
+                            <option value="Koor" <?= ($edit['nama_divisi']=='Koor')?'selected':''; ?>>Koor</option>
+                            <option value="Katekese" <?= ($edit['nama_divisi']=='Katekese')?'selected':''; ?>>Katekese</option>
+                            <option value="OMK" <?= ($edit['nama_divisi']=='OMK')?'selected':''; ?>>OMK</option>
+                            <option value="PSE" <?= ($edit['nama_divisi']=='PSE')?'selected':''; ?>>PSE</option>
+                            <option value="Perlengkapan" <?= ($edit['nama_divisi']=='Perlengkapan')?'selected':''; ?>>Perlengkapan</option>
+                            <option value="Inventaris" <?= ($edit['nama_divisi']=='Inventaris')?'selected':''; ?>>Inventaris</option>
+                            <option value="Humas" <?= ($edit['nama_divisi']=='Humas')?'selected':''; ?>>Humas</option>
+                            <option value="Keuangan" <?= ($edit['nama_divisi']=='Keuangan')?'selected':''; ?>>Keuangan</option>
+                            <option value="Sekretariat" <?= ($edit['nama_divisi']=='Sekretariat')?'selected':''; ?>>Sekretariat</option>
+                        </select>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="penanggung_jawab">penanggung Jawab</label>
-                            <input type="text" name="penanggung_jawab" value="<?= $edit['penanggung_jawab']; ?>" id="penanggung_jawab" placeholder="penanggung Jawab" class="form-control">
-                        </div>
+                    <div class="form-group">
+                        <label>Penanggung Jawab</label>
+                        <select class="form-control" name="penanggung_jawab">
+                            <option value="Yohanes" <?= ($edit['penanggung_jawab']=='Yohanes')?'selected':''; ?>>Yohanes</option>
+                            <option value="Maria" <?= ($edit['penanggung_jawab']=='Maria')?'selected':''; ?>>Maria</option>
+                            <option value="Antonius" <?= ($edit['penanggung_jawab']=='Antonius')?'selected':''; ?>>Antonius</option>
+                            <option value="Fransiskus" <?= ($edit['penanggung_jawab']=='Fransiskus')?'selected':''; ?>>Fransiskus</option>
+                            <option value="Agustinus" <?= ($edit['penanggung_jawab']=='Agustinus')?'selected':''; ?>>Agustinus</option>
+                            <option value="Theresia" <?= ($edit['penanggung_jawab']=='Theresia')?'selected':''; ?>>Theresia</option>
+                            <option value="Bernadeth" <?= ($edit['penanggung_jawab']=='Bernadeth')?'selected':''; ?>>Bernadeth</option>
+                            <option value="Petrus" <?= ($edit['penanggung_jawab']=='Petrus')?'selected':''; ?>>Petrus</option>
+                        </select>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="status">Status</label>
-                            <input type="text" name="status" value="<?= $edit['status']; ?>" id="status" placeholder="Status" class="form-control">
-                        </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select class="form-control" name="status">
+                            <option value="aktif" <?= ($edit['status']=='aktif')?'selected':''; ?>>Aktif</option>
+                            <option value="tidak aktif" <?= ($edit['status']=='tidak aktif')?'selected':''; ?>>Tidak Aktif</option>
+                        </select>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="keterangan">Keterangan</label>
-                            <input type="text" name="keterangan" value="<?= $edit['keterangan']; ?>" id="keterangan" placeholder="Keterangan" class="form-control">
-                        </div>
+                    <div class="form-group">
+                        <label>Keterangan</label>
+                        <input type="text"
+                            name="keterangan"
+                            value="<?= $edit['keterangan']; ?>"
+                            class="form-control">
+                    </div>
+
+
 
                         <div class="card-footer">
                             <input type="submit" class="btn btn-primary" name="tambah" value="Simpan">
