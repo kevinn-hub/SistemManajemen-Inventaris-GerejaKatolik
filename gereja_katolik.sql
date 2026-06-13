@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 11, 2026 at 02:11 AM
+-- Generation Time: Jun 13, 2026 at 05:01 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -30,11 +30,11 @@ USE `gereja_katolik`;
 --
 
 CREATE TABLE `tbl_divisi` (
-  `id_divisi` int(11) NOT NULL,
-  `nama_divisi` varchar(100) NOT NULL,
-  `penanggung_jawab` varchar(100) NOT NULL,
+  `id_divisi` int(10) NOT NULL,
+  `nama_divisi` varchar(100) DEFAULT NULL,
+  `penanggung_jawab` varchar(100) DEFAULT NULL,
   `status` enum('aktif','tidak aktif') DEFAULT NULL,
-  `keterangan` varchar(100) NOT NULL
+  `keterangan` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `tbl_divisi` (
 --
 
 INSERT INTO `tbl_divisi` (`id_divisi`, `nama_divisi`, `penanggung_jawab`, `status`, `keterangan`) VALUES
-(1, 'Liturgi', 'Yohanes', 'aktif', 'ketua Hub. Masyarakat');
+(1, 'sekre', 'Yohanes', 'tidak aktif', 'ketua Hub. Masyarakat');
 
 -- --------------------------------------------------------
 
@@ -86,12 +86,6 @@ ALTER TABLE `tbl_users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `tbl_divisi`
---
-ALTER TABLE `tbl_divisi`
-  MODIFY `id_divisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`
