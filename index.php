@@ -136,19 +136,6 @@
                 </a>
                   </li>
 
-              <li class="nav-item">
-                <a href="index.php?page=kelas" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-              <p>kegiatan</p>
-                </a>
-                  </li>
-              
-              <li class="nav-item">
-                <a href="index.php?page=kelas" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-              <p>pendaftaran</p>
-                </a>
-                  </li>
                   <?php } ?>
               
                 <?php if($_SESSION['Role']=="pengurus"){ ?>
@@ -213,9 +200,32 @@
               </a>
 
               <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Jadwal</p>
+                <a href="index.php?page=kegiatan" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+              <p>kegiatan</p>
+                </a>
+                  </li>
+              
+              <li class="nav-item">
+                <a href="index.php?page=pendaftaran" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+              <p>pendaftaran</p>
+                </a>
+                  </li>
+
+                <li class="nav-item">
+                <a href="index.php?page=panitia" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+              <p>panitia</p>
+                </a>
+                  </li>
+
+                  <li class="nav-item">
+                <a href="index.php?page=laporan_kegiatan" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+              <p>laporan kegiatan</p>
+                </a>
+
                   </a>
                 </li>
               </ul>

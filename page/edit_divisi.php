@@ -48,7 +48,7 @@ if(isset($_POST['tambah'])){
 
                     <div class="form-group">
                         <label>Nama Divisi</label>
-                        <select class="form-control" name="nama_divisi">
+                        <select class="form-control" name="nama_divisi" id="nama_divisi">
                             <option value="Liturgi" <?= ($edit['nama_divisi']=='Liturgi')?'selected':''; ?>>Liturgi</option>
                             <option value="Koor" <?= ($edit['nama_divisi']=='Koor')?'selected':''; ?>>Koor</option>
                             <option value="Katekese" <?= ($edit['nama_divisi']=='Katekese')?'selected':''; ?>>Katekese</option>
@@ -64,7 +64,7 @@ if(isset($_POST['tambah'])){
 
                     <div class="form-group">
                         <label>Penanggung Jawab</label>
-                        <select class="form-control" name="penanggung_jawab">
+                        <select class="form-control" name="penanggung_jawab" id="penanggung_jawab">
                             <option value="Yohanes" <?= ($edit['penanggung_jawab']=='Yohanes')?'selected':''; ?>>Yohanes</option>
                             <option value="Maria" <?= ($edit['penanggung_jawab']=='Maria')?'selected':''; ?>>Maria</option>
                             <option value="Antonius" <?= ($edit['penanggung_jawab']=='Antonius')?'selected':''; ?>>Antonius</option>
@@ -78,7 +78,7 @@ if(isset($_POST['tambah'])){
 
                     <div class="form-group">
                         <label>Status</label>
-                        <select class="form-control" name="status">
+                        <select class="form-control" name="status" id="status">
                             <option value="aktif" <?= ($edit['status']=='aktif')?'selected':''; ?>>Aktif</option>
                             <option value="tidak aktif" <?= ($edit['status']=='tidak aktif')?'selected':''; ?>>Tidak Aktif</option>
                         </select>
@@ -86,7 +86,7 @@ if(isset($_POST['tambah'])){
 
                     <div class="form-group">
                         <label>Keterangan</label>
-                        <input type="text" name="keterangan" value="<?= $edit['keterangan']; ?>" class="form-control">
+                        <input type="text" name="keterangan" value="<?= $edit['keterangan']; ?>" id="keterangan" class="form-control">
                     </div>
 
 
