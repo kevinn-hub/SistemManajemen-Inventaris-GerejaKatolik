@@ -86,10 +86,7 @@ if(isset($_POST['tambah'])){
 
                     <div class="form-group">
                         <label>Keterangan</label>
-                        <input type="text"
-                            name="keterangan"
-                            value="<?= $edit['keterangan']; ?>"
-                            class="form-control">
+                        <input type="text" name="keterangan" value="<?= $edit['keterangan']; ?>" class="form-control">
                     </div>
 
 
