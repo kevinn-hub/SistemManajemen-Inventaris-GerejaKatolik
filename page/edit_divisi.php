@@ -19,7 +19,7 @@ if(isset($_POST['tambah'])){
     $status = $_POST['status'];
     $keterangan = $_POST['keterangan'];
     
-    $insert = mysqli_query($koneksi,"UPDATE tbl_divisi SET nama_divisi='$nama_divisi' WHERE id_divisi='$id_divisi' ");
+    $insert = mysqli_query($koneksi,"UPDATE tbl_divisi SET nama_divisi='$nama_divisi', penanggung_jawab='$penanggung_jawab', status='$status'  WHERE id_divisi='$id_divisi' ");
     if ($insert) {
         echo '<div class="alert alert-info-dismissible">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
