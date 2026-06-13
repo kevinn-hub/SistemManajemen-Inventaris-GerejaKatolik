@@ -123,14 +123,14 @@
                 </li>
 
                 <li class="nav-item">
-                  <a href="index.php?page=siswa" class="nav-link">
+                  <a href="index.php?page=pengurus" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                 <p>pengurus</p>
                   </a>
                     </li>
 
               <li class="nav-item">
-                <a href="index.php?page=mapel" class="nav-link">
+                <a href="index.php?page=anggota" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
               <p>anggota</p>
                 </a>
