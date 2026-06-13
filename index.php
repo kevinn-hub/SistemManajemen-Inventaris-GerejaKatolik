@@ -125,21 +125,28 @@
                 <li class="nav-item">
                   <a href="index.php?page=siswa" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                <p>Siswa</p>
+                <p>pengurus</p>
                   </a>
                     </li>
 
               <li class="nav-item">
                 <a href="index.php?page=mapel" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-              <p>Mapel</p>
+              <p>anggota</p>
                 </a>
                   </li>
 
               <li class="nav-item">
                 <a href="index.php?page=kelas" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-              <p>kelas</p>
+              <p>kegiatan</p>
+                </a>
+                  </li>
+              
+              <li class="nav-item">
+                <a href="index.php?page=kelas" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+              <p>pendaftaran</p>
                 </a>
                   </li>
                   <?php } ?>
