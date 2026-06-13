@@ -102,15 +102,8 @@ if(isset($_POST['tambah'])){
                     </div>
 
                     <div class="card-footer">
-                    <button type="submit" name="tambah" class="btn btn-primary">
-                        <i class="fas fa-save"></i> Simpan
-                    </button>
-
-                    <a href="index.php?page=divisi" class="btn btn-secondary">
-                        <i class="fas fa-arrow-left"></i> Kembali
-                    </a>
-                </div>
-
+                        <input type="submit" class="btn btn-primary" name="tambah" value="Simpan">
+                    </div>
             </form>
             </div>
         </div>
