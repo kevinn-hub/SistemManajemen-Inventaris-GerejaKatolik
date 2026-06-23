@@ -27,8 +27,10 @@ if(isset($_POST['tambah'])){
   $jabatan           = $_POST['jabatan'];
   $periode           = $_POST['periode'];
   $status_pengurus   = $_POST['status_pengurus'];
-  $nama_divisi       = $_POST['nama_divisi'];
-    $insert = mysqli_query($koneksi,"INSERT INTO tbl_pengurus values ('$id_pengurus', '$nama_pengurus', '$jabatan', '$periode', '$status_pengurus', '$nama_divisi')"); 
+  $nama_divisi   = $_POST['nama_divisi'];
+  $id_divisi       = $_POST['id_divisi'];
+  $Id_user       = $_POST['Id_user'];
+    $insert = mysqli_query($koneksi,"INSERT INTO tbl_pengurus values ('$id_pengurus', '$nama_pengurus', '$jabatan', '$periode', '$status_pengurus', '$nama_divisi', '$id_divisi', '$Id_user')"); 
     if ($insert) {
         echo '<div class="alert alert-info-dismissible">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -51,66 +53,79 @@ if(isset($_POST['tambah'])){
             </div>
 
             <div class="card-body">
-                <form method="POST">
-                    <div class="form-group">
-                        <label>ID Pengurus</label>
-                        <input type="text" name="id_pengurus" value="<?= $hasilkode ?>" class="form-control" readonly>
-                    </div>
+    <form method="POST">
 
-                     <div class="form-group">
-                        <label>Nama Pengurus</label>
-                        <input type="text" name="nama_pengurus" id="nama_pengurus" class="form-control">
-                    </div>
+        <div class="form-group">
+            <label>ID Pengurus</label>
+            <input type="text" name="id_pengurus" value="<?= $hasilkode ?>" class="form-control" readonly>
+        </div>
 
-                  <div class="form-group">
-                            <label for="jabatan">jabatan</label>
-                            <select class="form-control" name="jabatan" id="jabatan" placeholder="jabatan">
-                            <option disable selected>-- Pilih jabaatan --</option>
-                            <option value="Ketua Predisium">Ketua Predisium</option>
-                            <option value="Sekretaris Jendral">Sekretaris Jendral</option>
-                            <option value="Bendahara">Bendahara</option>
-                            <option value="Ketua Bidang Kaderisasi">"Ketua Bidang Kaderisasi</option>
-                            <option value="Ketua Bidang Organisasi">Ketua Bidang Organisasi</option>
-                        </select>
-                    </div>
+        <div class="form-group">
+            <label>Divisi</label>
+            <select class="form-control" name="id_divisi">
+                <option value="">-- Nama Divisi --</option>
+                <?php
+                $divisi = mysqli_query($koneksi, "SELECT * FROM tbl_divisi");
+                while($d = mysqli_fetch_array($divisi)){
+                ?>
+                    <option value="<?= $d['id_divisi']; ?>">
+                        <?= $d['nama_divisi']; ?>
+                    </option>
+                <?php } ?>
+            </select>
+        </div>
 
-                    <div class="form-group">
-                            <label for="periode">periode</label>
-                            <select class="form-control" name="periode" id="periode" placeholder="periode">
-                            <option disable selected>-- Pilih periode --</option>
-                            <option value="2020-2021">2020-2021</option>
-                            <option value="2022-2023">2022-2023</option>
-                            <option value="2024-2025">2024-2025</option>
-                            <option value="2026-2027">2026-2027</option>
-                            <option value="2028-2029">2026-2027</option>
-                        </select>
-                    </div>
+        <div class="form-group">
+                    <label>User Anggota</label>
+                    <select name="Id_user" class="form-control">
+                        <?php
+                        $user = mysqli_query($koneksi,"SELECT * FROM tbl_users WHERE Role='pengurus'");
+                        while($u = mysqli_fetch_array($user)){
+                        ?>
+                        <option value="<?= $u['Id_user']; ?>">
+                            <?= $u['Username']; ?>
+                        </option>
+                        <?php } ?>
+                    </select>
+                </div>
 
-                    <div class="form-group">
-                        <label>Status Pengurus</label>
-                        <select class="form-control" name="status_pengurus" id="status_pengurus" placeholder="status_pengurus">
-                            <option value="">-- Pilih Status --</option>
-                            <option value="aktif">Aktif</option>
-                            <option value="tidak Aktif">Tidak Aktif</option>
-                        </select>
-                    </div>
+        <div class="form-group">
+            <label>Nama Pengurus</label>
+            <input type="text" name="nama_pengurus" class="form-control">
+        </div>
 
-                    div class="form-group">
-                            <label for="nama_divisi">Nama Divisi</label>
-                            <select class="form-control" name="nama_divisi" id="nama_divisi" placeholder="nama_divisi">
-                            <option disable selected>-- Pilih jenis divisi --</option>
-                            <option value="Liturgi">Liturgi</option>
-                            <option value="Koor">Koor</option>
-                            <option value="Katekese">Katekese</option>
-                            <option value="OMK">Orang Muda Katolik (OMK)</option>
-                            <option value="PSE">PSE</option>
-                            <option value="Perlengkapan">Perlengkapan</option>
-                            <option value="Inventaris">Inventaris</option>
-                            <option value="Humas">Hubungan Masyarakat</option>
-                            <option value="Keuangan">Keuangan</option>
-                            <option value="Sekretariat">Sekretariat</option>
-                        </select>
-                    </div>
+        <div class="form-group">
+            <label>Jabatan</label>
+            <select class="form-control" name="jabatan">
+                <option value="">-- Pilih Jabatan --</option>
+                <option value="Ketua Presidium">Ketua Presidium</option>
+                <option value="Sekretaris Jendral">Sekretaris Jendral</option>
+                <option value="Bendahara">Bendahara</option>
+                <option value="Ketua Bidang Kaderisasi">Ketua Bidang Kaderisasi</option>
+                <option value="Ketua Bidang Organisasi">Ketua Bidang Organisasi</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Periode</label>
+            <select class="form-control" name="periode">
+                <option value="">-- Pilih Periode --</option>
+                <option value="2020-2021">2020-2021</option>
+                <option value="2022-2023">2022-2023</option>
+                <option value="2024-2025">2024-2025</option>
+                <option value="2026-2027">2026-2027</option>
+                <option value="2028-2029">2028-2029</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Status Pengurus</label>
+            <select class="form-control" name="status_pengurus">
+                <option value="">-- Pilih Status --</option>
+                <option value="Aktif">Aktif</option>
+                <option value="Tidak Aktif">Tidak Aktif</option>
+            </select>
+        </div>
 
                     <div class="card-footer">
                         <input type="submit" class="btn btn-primary" name="tambah" value="Simpan">

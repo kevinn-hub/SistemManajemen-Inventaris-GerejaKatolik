@@ -38,12 +38,19 @@ if (isset($_GET['action'])) {
                         <th>PERIODE</th>
                         <th>STATUS PENGURUS</th>
                         <th>NAMA DIVISI</th>
+                        <th>ID DIVISI</th>
+                        <th>ID USER</th>
                         <th>Aksi</th>
                     </tr>
                 </tread>
                 <?php
                 $no = 0;
-                $query = mysqli_query($koneksi, "SELECT * FROM tbl_pengurus");
+                $query = mysqli_query($koneksi, "SELECT *
+                FROM tbl_pengurus
+                INNER JOIN tbl_divisi
+                ON tbl_pengurus.id_divisi = tbl_divisi.id_divisi
+                INNER JOIN tbl_users
+                ON tbl_pengurus.id_user = tbl_users.Id_user");
                 while ($result = mysqli_fetch_array($query)) {
                     $no++
                 ?>
@@ -56,6 +63,8 @@ if (isset($_GET['action'])) {
                         <td><?= $result['periode']; ?></td>
                         <td><?= $result['status_pengurus']; ?></td>
                         <td><?= $result['nama_divisi']; ?></td>
+                        <td><?= $result['id_divisi']; ?></td>
+                        <td><?= $result['id_user']; ?></td>
                         <td>
                             <a href="index.php?page=pengurus&action=hapus&id=<?= $result['id_pengurus'] ?>" title="">
                                 <span class="badge badge-danger">Hapus</span>

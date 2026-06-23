@@ -26,7 +26,8 @@ if (isset($_POST['tambah'])) {
   $nama_kegiatan   = $_POST['nama_kegiatan'];
   $tanggal_laporan = $_POST['tanggal_laporan'];
   $keterangan      = $_POST['keterangan'];
-    $insert = mysqli_query($koneksi,"INSERT INTO tbl_laporan values ('$id_laporan', '$nama_kegiatan', '$tanggal_laporan', '$keterangan')"); 
+  $id_kegiatan     = $_POST['id_kegiatan'];
+    $insert = mysqli_query($koneksi,"INSERT INTO tbl_laporan values ('$id_laporan', '$nama_kegiatan', '$tanggal_laporan', '$keterangan', '$id_kegiatan')"); 
     if ($insert) {
         echo '<div class="alert alert-info-dismissible">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -55,6 +56,21 @@ if (isset($_POST['tambah'])) {
             <label>ID Laporan</label>
             <input type="text" name="id_laporan" value="<?= $hasilkode ?>" class="form-control" readonly>
           </div>
+
+          <div class="form-group">
+    <label>Kegiatan</label>
+    <select class="form-control" name="id_kegiatan">
+        <option value="">-- Pilih Kegiatan --</option>
+        <?php
+        $kegiatan = mysqli_query($koneksi,"SELECT * FROM tbl_kegiatan");
+        while($k = mysqli_fetch_array($kegiatan)){
+        ?>
+        <option value="<?= $k['id_kegiatan']; ?>">
+            <?= $k['nama_kegiatan']; ?>
+        </option>
+        <?php } ?>
+    </select>
+</div>
 
           <div class="form-group">
             <label>Nama Kegiatan</label>

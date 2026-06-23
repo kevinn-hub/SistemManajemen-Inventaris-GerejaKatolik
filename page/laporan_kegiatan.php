@@ -36,12 +36,17 @@ if (isset($_GET['action'])) {
                         <th>NAMA KEGIATAN</th>
                         <th>TANGGAL LAPORAN</th>
                         <th>KETERANGAN</th>
+                        <th>ID KEGIATAN</th>
                         <th>Aksi</th>
                     </tr>
                 </tread>
                 <?php
                 $no = 0;
-                $query = mysqli_query($koneksi, "SELECT * FROM tbl_laporan");
+                $query = mysqli_query($koneksi,"SELECT *
+                FROM tbl_laporan
+                INNER JOIN tbl_kegiatan
+                ON tbl_laporan.id_kegiatan = tbl_kegiatan.id_kegiatan
+                ");
                 while ($result = mysqli_fetch_array($query)) {
                     $no++
                 ?>
@@ -52,6 +57,7 @@ if (isset($_GET['action'])) {
                         <td><?= $result['nama_kegiatan']; ?></td>
                         <td><?= $result['tanggal_laporan']; ?></td>
                         <td><?= $result['keterangan']; ?></td>
+                        <td><?= $result['id_kegiatan']; ?></td>
                         <td>
                             <a href="index.php?page=laporan_kegiatan&action=hapus&id=<?= $result['id_laporan'] ?>" title="">
                                 <span class="badge badge-danger">Hapus</span>
