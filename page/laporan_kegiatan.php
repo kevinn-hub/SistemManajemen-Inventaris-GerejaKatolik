@@ -28,6 +28,9 @@ if (isset($_GET['action'])) {
         <div class="card-body">
             <a href="index.php?page=tambah_laporan" class="btn btn-primary btn-sm">
                 Tambah Laporan Kegiatan</a>
+
+                <a href="page/cetak_laporan_kegiatan.php" target="_blank" class="btn btn-success btn-sm">
+                Cetak Laporan</a>
             <table class="table table-striped">
                 <tread>
                     <tr>
