@@ -172,9 +172,9 @@
                 <?php if($_SESSION['Role']=="anggota"){ ?>
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
-                <a href="index.php?page=kegiatan" class="nav-link">
+                <a href="index.php?page=profil_anggota" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Kegiatan</p>
+                    <p>Profil</p>
                 </a>
             </li>
 

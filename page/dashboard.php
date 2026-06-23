@@ -1,3 +1,6 @@
+
+
+
 <div class="card shadow">
     <div class="card-body">
 
@@ -15,6 +18,144 @@
                 Sistem Manajemen Inventaris Gereja Katolik
             </p>
         </div>
+
+
+
+
+<div class="row">
+
+  <div class="col-lg-4 col-md-6 col-12 d-flex">
+
+    <div class="card text-center w-100 h-100">
+
+      <div class="card-body d-flex flex-column justify-content-between">
+
+        <div>
+
+          <img src="https://randomuser.me/api/portraits/men/10.jpg"
+               style="width:100px;height:100px;border-radius:50%;object-fit:cover;">
+
+          <h5 style="margin-top:10px;">Kevin</h5>
+
+          <p>Admin</p>
+
+        </div>
+
+        <div>
+          <span class="badge bg-success">Aktif</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="col-lg-4 col-md-6 col-12 d-flex">
+
+    <div class="card text-center w-100 h-100">
+
+      <div class="card-body d-flex flex-column justify-content-between">
+
+        <div>
+
+          <img src="https://randomuser.me/api/portraits/women/20.jpg"
+               style="width:100px;height:100px;border-radius:50%;object-fit:cover;">
+
+          <h5 style="margin-top:10px;">Dika</h5>
+
+          <p>Pengurus</p>
+
+        </div>
+
+        <div>
+          <span class="badge bg-success">Aktif</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="col-lg-4 col-md-6 col-12 d-flex">
+
+    <div class="card text-center w-100 h-100">
+
+      <div class="card-body d-flex flex-column justify-content-between">
+
+        <div>
+
+          <img src="https://randomuser.me/api/portraits/men/30.jpg"
+               style="width:100px;height:100px;border-radius:50%;object-fit:cover;">
+
+          <h5 style="margin-top:10px;">Melvyn</h5>
+
+          <p>Anggota</p>
+
+        </div>
+
+        <div>
+          <span class="badge bg-success">Aktif</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<?php
+
+$admin = mysqli_fetch_assoc(
+    mysqli_query($koneksi, "SELECT COUNT(*) as total FROM tbl_users WHERE Role='admin'")
+);
+
+$pengurus = mysqli_fetch_assoc(
+    mysqli_query($koneksi, "SELECT COUNT(*) as total FROM tbl_users WHERE Role='pengurus'")
+);
+
+$anggota = mysqli_fetch_assoc(
+    mysqli_query($koneksi, "SELECT COUNT(*) as total FROM tbl_users WHERE Role='anggota'")
+);
+
+?>
+
+<div class="row">
+
+  <div class="col-lg-4">
+    <div class="small-box bg-danger">
+      <div class="inner">
+        <h3><?= $admin['total']; ?></h3>
+        <p>Admin</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="small-box bg-info">
+      <div class="inner">
+        <h3><?= $pengurus['total']; ?></h3>
+        <p>Pengurus</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="small-box bg-success">
+      <div class="inner">
+        <h3><?= $anggota['total']; ?></h3>
+        <p>Anggota</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 
         <hr>
 
@@ -142,5 +283,55 @@
             </footer>
         </blockquote>
 
+
+        
+<?php
+if ($_SESSION['Role'] == "admin") {
+
+    $jumlahPengurus = mysqli_query($koneksi, "SELECT COUNT(*) as total FROM tbl_pengurus");
+    $pengurus = mysqli_fetch_assoc($jumlahPengurus);
+
+    $jumlahAnggota = mysqli_query($koneksi, "SELECT COUNT(*) as total FROM tbl_anggota");
+    $anggota = mysqli_fetch_assoc($jumlahAnggota);
+
+    $jumlahKegiatan = mysqli_query($koneksi, "SELECT COUNT(*) as total FROM tbl_kegiatan");
+    $kegiatan = mysqli_fetch_assoc($jumlahKegiatan);
+?>
+<div class="row">
+
+  <div class="col-lg-4">
+    <div class="small-box bg-info">
+      <div class="inner">
+        <h3><?= $pengurus['total']; ?></h3>
+        <p>Pengurus</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="small-box bg-success">
+      <div class="inner">
+        <h3><?= $anggota['total']; ?></h3>
+        <p>Anggota</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="small-box bg-warning">
+      <div class="inner">
+        <h3><?= $kegiatan['total']; ?></h3>
+        <p>Kegiatan</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+<?php } ?>
+
+
+
+
     </div>
 </div>
+

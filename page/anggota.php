@@ -41,18 +41,26 @@ if (isset($_GET['action'])) {
                         <th>NO HP</th>
                         <th>ALAMAT</th>
                         <th>STATUS ANGGOTA</th>
+                        <th>USERNAME</th>
+                        <th>ROLE</th>
+                        <th>STATUS LOGIN</th>
                         <th>Aksi</th>
                     </tr>
                 </tread>
                 <?php
                 $no = 0;
-                $query = mysqli_query($koneksi, "SELECT * FROM tbl_anggota");
+                $query = mysqli_query($koneksi,"SELECT *
+                FROM tbl_anggota
+                LEFT JOIN tbl_users
+                ON tbl_anggota.Id_user = tbl_users.Id_user
+                ");
                 while ($result = mysqli_fetch_array($query)) {
                     $no++
                 ?>
                 <tbody>
                     <tr>
                         <td><?= $no; ?></td>
+
                         <td><?= $result['id_anggota']; ?></td>
                         <td><?= $result['nama_anggota']; ?></td>
                         <td><?= $result['npm']; ?></td>
@@ -62,6 +70,9 @@ if (isset($_GET['action'])) {
                         <td><?= $result['no_hp']; ?></td>
                         <td><?= $result['alamat']; ?></td>
                         <td><?= $result['status_anggota']; ?></td>
+                        <td><?= $result['Username']; ?></td>
+                        <td><?= $result['Role']; ?></td>
+                        <td><?= $result['status']; ?></td>
                         <td>
                             <a href="index.php?page=anggota&action=hapus&id=<?= $result['id_anggota'] ?>" title="">
                                 <span class="badge badge-danger">Hapus</span>

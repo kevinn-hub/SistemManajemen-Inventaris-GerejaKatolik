@@ -31,7 +31,8 @@ if(isset($_POST['tambah'])){
   $no_hp            = $_POST['no_hp'];
   $alamat           = $_POST['alamat'];
   $status_anggota   = $_POST['status_anggota'];
-    $insert = mysqli_query($koneksi,"INSERT INTO tbl_anggota values ('$id_anggota', '$nama_anggota', '$npm', '$fakultas', '$prodi', '$angkatan', '$no_hp', '$alamat', '$status_anggota')"); 
+  $Id_user          = $_POST['Id_user'];
+  $insert = mysqli_query($koneksi,"INSERT INTO tbl_anggota values ('$id_anggota', '$nama_anggota', '$npm', '$fakultas', '$prodi', '$angkatan', '$no_hp', '$alamat', '$status_anggota', '$Id_user')"); 
     if ($insert) {
         echo '<div class="alert alert-info-dismissible">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -64,6 +65,20 @@ if(isset($_POST['tambah'])){
                         <label>Nama Anggota</label>
                         <input type="text" name="nama_anggota" id="nama_anggota" class="form-control">
                     </div>
+
+                    <div class="form-group">
+                    <label>User Anggota</label>
+                    <select name="Id_user" class="form-control">
+                        <?php
+                        $user = mysqli_query($koneksi,"SELECT * FROM tbl_users WHERE Role='anggota'");
+                        while($u = mysqli_fetch_array($user)){
+                        ?>
+                        <option value="<?= $u['Id_user']; ?>">
+                            <?= $u['Username']; ?>
+                        </option>
+                        <?php } ?>
+                    </select>
+                </div>
 
                   <div class="form-group">
                             <label for="npm">npm</label>
@@ -129,6 +144,7 @@ if(isset($_POST['tambah'])){
                             <option value="">-- Pilih Status --</option>
                             <option value="aktif">Aktif</option>
                             <option value="tidak Aktif">Tidak Aktif</option>
+                            <option value="alumni">Alumni</option>
                         </select>
                     </div>
 
