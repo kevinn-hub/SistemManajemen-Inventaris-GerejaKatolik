@@ -12,7 +12,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Starter</title>
+    <title>Sistem Informasi Gereja Santa Bernadeth</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -141,51 +141,52 @@
                 <?php if($_SESSION['Role']=="pengurus"){ ?>
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                <a href="index.php?page=kegiatan" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Profil</p>
-                  </a>
-                </li>
+                    <p>Kegiatan</p>
+                </a>
+            </li>
 
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                <p>Kelas</p>
-                  </a>
-                    </li>
-
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                <p>Jadwal</p>
-                  </a>
-                    </li>
-
-                     <li class="nav-item">
-                    <a href="index.php?page=ganti_password" class="nav-link">
+            <li class="nav-item">
+                <a href="index.php?page=pendaftaran" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                  <p>Ganti Password</p>
-                  </a>
-                    </li>
+                    <p>Pendaftaran</p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="index.php?page=panitia" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Panitia</p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="index.php?page=laporan_kegiatan" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Laporan Kegiatan</p>
+                </a>
+            </li>
                 <?php } ?>
 
                 <?php if($_SESSION['Role']=="anggota"){ ?>
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                <a href="index.php?page=kegiatan" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Profil</p>
-                  </a>
-                </li>
+                    <p>Kegiatan</p>
+                </a>
+            </li>
 
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                <p>Jadwal</p>
-                  </a>
-                    </li>
+            <li class="nav-item">
+                <a href="index.php?page=pendaftaran" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Pendaftaran Saya</p>
+                </a>
+            </li>
                 <?php } ?>
 
+                <?php if($_SESSION['Role']=="admin"){ ?>
                 <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
@@ -230,6 +231,7 @@
                 </li>
               </ul>
             </li>
+            <?php } ?>
 
             <li class="nav-item">
               <a href="logout.php" class="nav-link">
@@ -270,10 +272,10 @@
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Dashboard</h5>
+                  <h5 class="card-title">Dashboard Sistem Informasi Gereja Santa Bernadeth</h5>
 
                   <p class="card-text">
                     <?php
@@ -326,7 +328,7 @@
         Anything you want
       </div>
       <!-- Default to the left -->
-      <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+     <strong>Copyright &copy; 2026 Gereja Santa Bernadeth.</strong>
     </footer>
   </div>
   <!-- ./wrapper -->
