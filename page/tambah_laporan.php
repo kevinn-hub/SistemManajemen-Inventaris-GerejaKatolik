@@ -95,6 +95,15 @@ if (isset($_POST['tambah'])) {
             <textarea name="keterangan" class="form-control" rows="4"></textarea>
           </div>
 
+          <hr>
+          <h5>Tambah Data Tambahan</h5>
+
+        <button type="button" class="btn btn-primary btn-sm mb-2" onclick="tambahKegiatan()">+ Tambah Kegiatan</button>
+        <button type="button" class="btn btn-success btn-sm mb-2" onclick="tambahPendaftaran()">+ Tambah Pendaftaran</button>
+        <button type="button" class="btn btn-warning btn-sm mb-2" onclick="tambahPanitia()">+ Tambah Panitia</button>
+
+        <div id="form-dinamis"></div>
+
           <div class="card-footer">
             <input type="submit" name="tambah" value="Simpan" class="btn btn-primary">
           </div>
@@ -105,3 +114,88 @@ if (isset($_POST['tambah'])) {
     </div>
   </div>
 </section>
+
+<script>
+function tambahKegiatan(){
+    document.getElementById('form-dinamis').innerHTML += `
+    <div class="card mt-3">
+        <div class="card-header bg-primary text-white">
+            Data Kegiatan Tambahan
+        </div>
+        <div class="card-body">
+
+            <div class="form-group">
+                <label>Nama Kegiatan</label>
+                <input type="text" name="tambahan_kegiatan[]" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Deskripsi</label>
+                <textarea name="deskripsi_kegiatan[]" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Tanggal Kegiatan</label>
+                <input type="date" name="tanggal_kegiatan[]" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Lokasi</label>
+                <input type="text" name="lokasi[]" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Kuota Peserta</label>
+                <input type="number" name="kuota[]" class="form-control">
+            </div>
+
+        </div>
+    </div>`;
+}
+
+
+function tambahPendaftaran(){
+    document.getElementById('form-dinamis').innerHTML += `
+    <div class="card mt-3">
+        <div class="card-header bg-success text-white">
+            Data Pendaftaran
+        </div>
+        <div class="card-body">
+
+            <div class="form-group">
+                <label>Nama Peserta</label>
+                <input type="text" name="nama_peserta[]" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>No HP</label>
+                <input type="text" name="no_hp[]" class="form-control">
+            </div>
+
+        </div>
+    </div>`;
+}
+
+
+function tambahPanitia(){
+    document.getElementById('form-dinamis').innerHTML += `
+    <div class="card mt-3">
+        <div class="card-header bg-warning">
+            Data Panitia
+        </div>
+        <div class="card-body">
+
+            <div class="form-group">
+                <label>Nama Panitia</label>
+                <input type="text" name="nama_panitia[]" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Jabatan</label>
+                <input type="text" name="jabatan[]" class="form-control">
+            </div>
+
+        </div>
+    </div>`;
+}
+</script>
