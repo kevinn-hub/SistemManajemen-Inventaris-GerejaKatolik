@@ -61,14 +61,16 @@ if (isset($_GET['action'])) {
                         <td><?= $result['tanggal_laporan']; ?></td>
                         <td><?= $result['keterangan']; ?></td>
                         <td><?= $result['id_kegiatan']; ?></td>
+                        
                         <td>
-                            <a href="index.php?page=laporan_kegiatan&action=hapus&id=<?= $result['id_laporan'] ?>" title="">
-                                <span class="badge badge-danger">Hapus</span>
-                            </a>
-                            <a href="index.php?page=edit_laporan&id=<?= $result['id_laporan'] ?>" title="">
-                                <span class="badge badge-warning">Edit</span>
-                            </a>
-                        </td>
+                        <a href="index.php?page=laporan_kegiatan&action=hapus&id=<?= $result['id_laporan'] ?>">
+                            <span class="badge badge-danger">Hapus</span>
+                        </a>
+
+                        <a href="index.php?page=edit_laporan&id=<?= $result['id_laporan'] ?>">
+                            <span class="badge badge-warning">Edit</span>
+                        </a>
+                    </td>
                     </tr>
                 </tbody>
                 <?php } ?>
