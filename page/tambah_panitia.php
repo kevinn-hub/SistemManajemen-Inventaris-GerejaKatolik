@@ -52,80 +52,79 @@ if(isset($_POST['tambah'])){
             <div class="card-body">
             <form method="POST">
 
-    
-    <div class="form-group">
-        <label>ID Panitia</label>
-        <input type="text" name="id_panitia" value="<?= $hasilkode ?>" class="form-control" readonly>
-    </div>
+                    <div class="form-group">
+                        <label>ID Panitia</label>
+                        <input type="text" name="id_panitia" value="<?= $hasilkode ?>" class="form-control" readonly>
+                    </div>
 
-    <div class="form-group">
-    <label>Pengurus</label>
-    <select name="id_pengurus" class="form-control">
-        <?php
-        $pengurus = mysqli_query($koneksi,"SELECT * FROM tbl_pengurus");
-        while($p = mysqli_fetch_array($pengurus)){
-        ?>
-        <option value="<?= $p['id_pengurus']; ?>">
-            <?= $p['nama_pengurus']; ?>
-        </option>
-        <?php } ?>
-    </select>
-</div>
+                    <div class="form-group">
+                    <label>Pengurus</label>
+                    <select name="id_pengurus" class="form-control">
+                        <?php
+                        $pengurus = mysqli_query($koneksi,"SELECT * FROM tbl_pengurus");
+                        while($p = mysqli_fetch_array($pengurus)){
+                        ?>
+                        <option value="<?= $p['id_pengurus']; ?>">
+                            <?= $p['nama_pengurus']; ?>
+                        </option>
+                        <?php } ?>
+                    </select>
+                </div>
 
-<div class="form-group">
-    <label>Kegiatan</label>
-    <select name="id_kegiatan" class="form-control">
-        <?php
-        $kegiatan = mysqli_query($koneksi,"SELECT * FROM tbl_kegiatan");
-        while($k = mysqli_fetch_array($kegiatan)){
-        ?>
-        <option value="<?= $k['id_kegiatan']; ?>">
-            <?= $k['nama_kegiatan']; ?>
-        </option>
-        <?php } ?>
-    </select>
-</div>
+                <div class="form-group">
+                    <label>Kegiatan</label>
+                    <select name="id_kegiatan" class="form-control">
+                        <?php
+                        $kegiatan = mysqli_query($koneksi,"SELECT * FROM tbl_kegiatan");
+                        while($k = mysqli_fetch_array($kegiatan)){
+                        ?>
+                        <option value="<?= $k['id_kegiatan']; ?>">
+                            <?= $k['nama_kegiatan']; ?>
+                        </option>
+                        <?php } ?>
+                    </select>
+                </div>
 
-    <div class="form-group">
-        <label>Nama Panitia</label>
-        <select class="form-control" name="nama_panitia">
-            <option value="">-- Pilih Nama Panitia --</option>
-            <option value="Yohanes">Yohanes</option>
-            <option value="Maria">Maria</option>
-            <option value="Antonius">Antonius</option>
-            <option value="Fransiskus">Fransiskus</option>
-            <option value="Agustinus">Agustinus</option>
-            <option value="Theresia">Theresia</option>
-            <option value="Bernadeth">Bernadeth</option>
-            <option value="Petrus">Petrus</option>
-        </select>
-    </div>
+                    <div class="form-group">
+                        <label>Nama Panitia</label>
+                        <select class="form-control" name="nama_panitia">
+                            <option value="">-- Pilih Nama Panitia --</option>
+                            <option value="Yohanes">Yohanes</option>
+                            <option value="Maria">Maria</option>
+                            <option value="Antonius">Antonius</option>
+                            <option value="Fransiskus">Fransiskus</option>
+                            <option value="Agustinus">Agustinus</option>
+                            <option value="Theresia">Theresia</option>
+                            <option value="Bernadeth">Bernadeth</option>
+                            <option value="Petrus">Petrus</option>
+                        </select>
+                    </div>
 
-    <div class="form-group">
-        <label>Nama Kegiatan</label>
-        <select class="form-control" name="nama_kegiatan">
-            <option value="">-- Pilih Kegiatan --</option>
-            <option value="Misa Mingguan">Misa Mingguan</option>
-            <option value="Retret OMK">Retret OMK</option>
-            <option value="Katekese">Katekese</option>
-            <option value="Bakti Sosial">Bakti Sosial</option>
-            <option value="Doa Lingkungan">Doa Lingkungan</option>
-            <option value="Latihan Koor">Latihan Koor</option>
-        </select>
-    </div>
+                    <div class="form-group">
+                        <label>Nama Kegiatan</label>
+                        <select class="form-control" name="nama_kegiatan">
+                            <option value="">-- Pilih Kegiatan --</option>
+                            <option value="Misa Mingguan">Misa Mingguan</option>
+                            <option value="Retret OMK">Retret OMK</option>
+                            <option value="Katekese">Katekese</option>
+                            <option value="Bakti Sosial">Bakti Sosial</option>
+                            <option value="Doa Lingkungan">Doa Lingkungan</option>
+                            <option value="Latihan Koor">Latihan Koor</option>
+                        </select>
+                    </div>
 
-    <div class="form-group">
-        <label>Jabatan Panitia</label>
-        <select class="form-control" name="jabatan_panitia">
-            <option value="">-- Pilih Jabatan --</option>
-            <option value="Ketua">Ketua</option>
-            <option value="Wakil Ketua">Wakil Ketua</option>
-            <option value="Sekretaris">Sekretaris</option>
-            <option value="Bendahara">Bendahara</option>
-            <option value="Koordinator">Koordinator</option>
-            <option value="Anggota">Anggota</option>
-        </select>
-    </div>
+                    <div class="form-group">
+                        <label>Jabatan Panitia</label>
+                        <select class="form-control" name="jabatan_panitia">
+                            <option value="">-- Pilih Jabatan --</option>
+                            <option value="Ketua">Ketua</option>
+                            <option value="Wakil Ketua">Wakil Ketua</option>
+                            <option value="Sekretaris">Sekretaris</option>
+                            <option value="Bendahara">Bendahara</option>
+                            <option value="Koordinator">Koordinator</option>
+                            <option value="Anggota">Anggota</option>
+                        </select>
+                    </div>
 
 
                     <div class="card-footer">

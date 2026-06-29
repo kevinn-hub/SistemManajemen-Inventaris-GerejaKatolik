@@ -27,10 +27,9 @@ if(isset($_POST['tambah'])){
   $jabatan           = $_POST['jabatan'];
   $periode           = $_POST['periode'];
   $status_pengurus   = $_POST['status_pengurus'];
-  $nama_divisi   = $_POST['nama_divisi'];
   $id_divisi       = $_POST['id_divisi'];
   $Id_user       = $_POST['Id_user'];
-    $insert = mysqli_query($koneksi,"INSERT INTO tbl_pengurus values ('$id_pengurus', '$nama_pengurus', '$jabatan', '$periode', '$status_pengurus', '$nama_divisi', '$id_divisi', '$Id_user')"); 
+    $insert = mysqli_query($koneksi,"INSERT INTO tbl_pengurus values ('$id_pengurus', '$nama_pengurus', '$jabatan', '$periode', '$status_pengurus', '$id_divisi', '$Id_user')"); 
     if ($insert) {
         echo '<div class="alert alert-info-dismissible">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -38,7 +37,7 @@ if(isset($_POST['tambah'])){
         <h4>Berhasil Disimpan</h4></div>';
         echo '<meta http-equiv="refresh" content="1;url=index.php?page=pengurus">';
     } else {
-        echo '<div class="alert alert-warning alert-dismissible">
+        echo '<div class="alert alert-warning alert-dismissible">   
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
         <h5><i class="icon fas fa-info"></i> Info </h5>
         <h4>Gagal Disimpan'.mysqli_error($koneksi).'</h4></div>';
@@ -89,10 +88,22 @@ if(isset($_POST['tambah'])){
                     </select>
                 </div>
 
-        <div class="form-group">
-            <label>Nama Pengurus</label>
-            <input type="text" name="nama_pengurus" class="form-control">
-        </div>
+            <div class="form-group">
+                <label>Nama Pengurus</label>
+                <select class="form-control" name="nama_pengurus">
+                    <option value="" selected disabled>-- Pilih Nama Pengurus --</option>
+                    <option value="Yohanes">Yohanes</option>
+                    <option value="Maria">Maria</option>
+                    <option value="Petrus">Petrus</option>
+                    <option value="Paulus">Paulus</option>
+                    <option value="Agustinus">Agustinus</option>
+                    <option value="Fransiskus">Fransiskus</option>
+                    <option value="Veronika">Veronika</option>
+                    <option value="Elisabet">Elisabet</option>
+                    <option value="Stefanus">Stefanus</option>
+                    <option value="Martha">Martha</option>
+                </select>
+            </div>
 
         <div class="form-group">
             <label>Jabatan</label>

@@ -35,7 +35,7 @@
                             <th>NAMA PANITIA</th>
                             <th>NAMA KEGIATAN</th>
                             <th>JABATAN PANITIA</th>
-                            <th>NAMA PENGURUS</th>
+                            <th>ID PENGURUS</th>
                             <th>ID KEGIATAN</th>
                             <th>Aksi</th>
                     </tread>
@@ -57,7 +57,7 @@
                             <td><?= $result['nama_panitia']; ?></td>
                             <td><?= $result['nama_kegiatan']; ?></td>
                             <td><?= $result['jabatan_panitia']; ?></td>
-                            <td><?= $result['nama_pengurus']; ?></td>
+                            <td><?= $result['id_pengurus']; ?></td>
                             <td><?= $result['id_kegiatan']; ?></td>
                             <td>
                                 <a href="index.php?page=panitia&action=hapus&id=<?= $result['id_panitia'] ?>" title="">

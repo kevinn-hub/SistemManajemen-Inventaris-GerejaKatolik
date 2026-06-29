@@ -97,9 +97,21 @@ if(isset($_POST['tambah'])){
                         </select>
                     </div>
 
-                    <div class="form-group">
+                        <div class="form-group">
                         <label>Keterangan</label>
-                        <input type="text" name="keterangan" id="keterangan" placeholder="keterangan" class="form-control">
+                        <select class="form-control" name="keterangan" id="keterangan">
+                            <option value="" selected disabled>-- Pilih Keterangan --</option>
+                            <option value="Ketua Divisi Liturgi">Ketua Divisi Liturgi</option>
+                            <option value="Ketua Divisi Koor">Ketua Divisi Koor</option>
+                            <option value="Ketua Divisi Katekese">Ketua Divisi Katekese</option>
+                            <option value="Ketua Divisi OMK">Ketua Divisi Orang Muda Katolik (OMK)</option>
+                            <option value="Ketua Divisi PSE">Ketua Divisi PSE</option>
+                            <option value="Ketua Divisi Perlengkapan">Ketua Divisi Perlengkapan</option>
+                            <option value="Ketua Divisi Inventaris">Ketua Divisi Inventaris</option>
+                            <option value="Ketua Divisi Humas">Ketua Divisi Hubungan Masyarakat</option>
+                            <option value="Ketua Divisi Keuangan">Ketua Divisi Keuangan</option>
+                            <option value="Ketua Divisi Sekretariat">Ketua Divisi Sekretariat</option>
+                        </select>
                     </div>
 
                     <div class="card-footer">

@@ -56,48 +56,60 @@ if(isset($_POST['tambah'])){
                                         <input type="text" name="id_daftar" value="<?= $hasilkode ?>" class="form-control" readonly>
                                     </div>
 
-        <div class="form-group">
-            <label>Nama Pendaftar</label>
-            <select class="form-control" name="nama_pendaftar" id="nama_pendaftar">
-                <option value="">-- Pilih Nama Pendaftar --</option>
-                <option value="Yohanes">Yohanes</option>
-                <option value="Maria">Maria</option>
-                <option value="Antonius">Antonius</option>
-                <option value="Fransiskus">Fransiskus</option>
-                <option value="Agustinus">Agustinus</option>
-                <option value="Theresia">Theresia</option>
-                <option value="Bernadeth">Bernadeth</option>
-                <option value="Petrus">Petrus</option>
-            </select>
-        </div>
+                    <div class="form-group">
+                        <label>Nama Pendaftar</label>
+                        <select class="form-control" name="nama_pendaftar" id="nama_pendaftar">
+                            <option value="">-- Pilih Nama Pendaftar --</option>
+                            <option value="Yohanes">Yohanes</option>
+                            <option value="Maria">Maria</option>
+                            <option value="Antonius">Antonius</option>
+                            <option value="Fransiskus">Fransiskus</option>
+                            <option value="Agustinus">Agustinus</option>
+                            <option value="Theresia">Theresia</option>
+                            <option value="Bernadeth">Bernadeth</option>
+                            <option value="Petrus">Petrus</option>
+                        </select>
+                    </div>
 
-        <div class="form-group">
-            <label>Nama Kegiatan</label>
-            <select class="form-control" name="nama_kegiatan">
-                <option value="">-- Pilih Nama Kegiatan --</option>
-                <option value="Misa Mingguan">Misa Mingguan</option>
-                <option value="Retret OMK">Retret OMK</option>
-                <option value="Katekese">Katekese</option>
-                <option value="Bakti Sosial">Bakti Sosial</option>
-                <option value="Doa Lingkungan">Doa Lingkungan</option>
-                <option value="Latihan Koor">Latihan Koor</option>
-            </select>
-        </div>
+                    <div class="form-group">
+                        <label>Nama Kegiatan</label>
+                        <select class="form-control" name="nama_kegiatan">
+                            <option value="">-- Pilih Nama Kegiatan --</option>
+                            <option value="Misa Mingguan">Misa Mingguan</option>
+                            <option value="Retret OMK">Retret OMK</option>
+                            <option value="Katekese">Katekese</option>
+                            <option value="Bakti Sosial">Bakti Sosial</option>
+                            <option value="Doa Lingkungan">Doa Lingkungan</option>
+                            <option value="Latihan Koor">Latihan Koor</option>
+                        </select>
+                    </div>
 
-        <div class="form-group">
-            <label>Tanggal Daftar</label>
-            <input type="date" name="tanggal_daftar" class="form-control">
-        </div>
+                   <div class="form-group">
+                        <label>Tanggal Daftar</label>
+                        <select class="form-control" name="tanggal_daftar" id="tanggal_daftar">
+                            <option value="" selected disabled>-- Pilih Tanggal Daftar --</option>
+                            <option value="2026-06-15">15 Juni 2026</option>
+                            <option value="2026-06-20">20 Juni 2026</option>
+                            <option value="2026-06-25">25 Juni 2026</option>
+                            <option value="2026-07-01">01 Juli 2026</option>
+                            <option value="2026-07-05">05 Juli 2026</option>
+                            <option value="2026-07-10">10 Juli 2026</option>
+                            <option value="2026-07-15">15 Juli 2026</option>
+                            <option value="2026-07-20">20 Juli 2026</option>
+                            <option value="2026-07-25">25 Juli 2026</option>
+                            <option value="2026-08-01">01 Agustus 2026</option>
+                        </select>
+                    </div>
 
-        <div class="form-group">
-            <label>Status</label>
-            <select class="form-control" name="status">
-                <option value="">-- Pilih Status --</option>
-                <option value="menunggu">Menunggu</option>
-                <option value="diterima">Diterima</option>
-                <option value="ditolak">Ditolak</option>
-            </select>
-        </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select class="form-control" name="status">
+                            <option value="">-- Pilih Status --</option>
+                            <option value="menunggu">Menunggu</option>
+                            <option value="diterima">Diterima</option>
+                            <option value="ditolak">Ditolak</option>
+                        </select>
+                    </div>
 
                     <div class="card-footer">
                         <input type="submit" class="btn btn-primary" name="tambah" value="Simpan">

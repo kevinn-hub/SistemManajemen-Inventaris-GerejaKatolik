@@ -63,7 +63,19 @@ if(isset($_POST['tambah'])){
 
                      <div class="form-group">
                         <label>Nama Anggota</label>
-                        <input type="text" name="nama_anggota" id="nama_anggota" class="form-control">
+                        <select class="form-control" name="nama_anggota" id="nama_anggota">
+                            <option value="" selected disabled>-- Pilih Nama Anggota --</option>
+                            <option value="Yohanes Pratama">Yohanes Pratama</option>
+                            <option value="Maria Natalia">Maria Natalia</option>
+                            <option value="Petrus Adrian">Petrus Adrian</option>
+                            <option value="Paulus Kristanto">Paulus Kristanto</option>
+                            <option value="Veronika Angel">Veronika Angel</option>
+                            <option value="Elisabet Maria">Elisabet Maria</option>
+                            <option value="Stefanus Wijaya">Stefanus Wijaya</option>
+                            <option value="Agustinus Saputra">Agustinus Saputra</option>
+                            <option value="Fransiskus Andika">Fransiskus Andika</option>
+                            <option value="Theresia Monica">Theresia Monica</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
@@ -129,14 +141,36 @@ if(isset($_POST['tambah'])){
                     </div>
 
                     <div class="form-group">
-                        <label>Nomor Hp</label>
-                        <input type="text" name="no_hp" id="no_hp" class="form-control">
-                    </div>
+                    <label>Nomor HP</label>
+                    <select class="form-control" name="no_hp" id="no_hp">
+                        <option value="" selected disabled>-- Pilih Nomor HP --</option>
+                        <option value="081234567890">081234567890</option>
+                        <option value="081345678901">081345678901</option>
+                        <option value="081456789012">081456789012</option>
+                        <option value="081567890123">081567890123</option>
+                        <option value="082112345678">082112345678</option>
+                        <option value="082223456789">082223456789</option>
+                        <option value="085712345678">085712345678</option>
+                        <option value="087812345678">087812345678</option>
+                        <option value="088212345678">088212345678</option>
+                        <option value="089612345678">089612345678</option>
+                    </select>
+                </div>
 
                     <div class="form-group">
-                        <label>Alamat</label>
-                        <input type="text" name="alamat" id="alamat" class="form-control">
-                    </div>
+                    <label>Alamat Rumah Anggota</label>
+                    <select class="form-control" name="alamat" id="alamat">
+                        <option value="" selected disabled>-- Pilih Alamat Rumah --</option>
+                        <option value="Jl. Melati No. 15, RT 03/RW 05, Kel. Sukamaju, Kec. Cibinong">Jl. Melati No. 15, RT 03/RW 05, Kel. Sukamaju, Kec. Cibinong</option>
+                        <option value="Jl. Mawar No. 8, RT 02/RW 04, Kel. Karadenan, Kec. Cibinong">Jl. Mawar No. 8, RT 02/RW 04, Kel. Karadenan, Kec. Cibinong</option>
+                        <option value="Jl. Kenanga No. 21, RT 01/RW 03, Kel. Nanggewer, Kec. Cibinong">Jl. Kenanga No. 21, RT 01/RW 03, Kel. Nanggewer, Kec. Cibinong</option>
+                        <option value="Jl. Anggrek No. 10, RT 05/RW 02, Kel. Pakansari, Kec. Cibinong">Jl. Anggrek No. 10, RT 05/RW 02, Kel. Pakansari, Kec. Cibinong</option>
+                        <option value="Jl. Flamboyan No. 7, RT 04/RW 01, Kel. Harapan Jaya, Kec. Bekasi Utara">Jl. Flamboyan No. 7, RT 04/RW 01, Kel. Harapan Jaya, Kec. Bekasi Utara</option>
+                        <option value="Jl. Cempaka No. 12, RT 03/RW 06, Kel. Sukahati, Kec. Cibinong">Jl. Cempaka No. 12, RT 03/RW 06, Kel. Sukahati, Kec. Cibinong</option>
+                        <option value="Jl. Teratai No. 9, RT 01/RW 02, Kel. Pabuaran, Kec. Cibinong">Jl. Teratai No. 9, RT 01/RW 02, Kel. Pabuaran, Kec. Cibinong</option>
+                        <option value="Jl. Bougenville No. 18, RT 05/RW 03, Kel. Tengah, Kec. Cibinong">Jl. Bougenville No. 18, RT 05/RW 03, Kel. Tengah, Kec. Cibinong</option>
+                    </select>
+                </div>
 
                     <div class="form-group">
                         <label>Status Anggota</label>

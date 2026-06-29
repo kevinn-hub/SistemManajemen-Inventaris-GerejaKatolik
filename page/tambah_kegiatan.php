@@ -71,15 +71,39 @@ if(isset($_POST['tambah'])){
                                         </select>
                                     </div>
 
-                    <div class="form-group">
-                        <label>Deskripsi</label>
-                        <textarea name="deskripsi" class="form-control" rows="4" placeholder="Masukkan Deskripsi Kegiatan"></textarea>
-                    </div>
+                <div class="form-group">
+                    <label>Deskripsi</label>
+                    <select class="form-control" name="deskripsi" id="deskripsi">
+                        <option value="" selected disabled>-- Pilih Deskripsi Kegiatan --</option>
+                        <option value="Rapat koordinasi pengurus untuk membahas program kerja gereja.">Rapat Koordinasi Pengurus</option>
+                        <option value="Latihan koor sebagai persiapan pelayanan Misa Minggu.">Latihan Koor</option>
+                        <option value="Kegiatan bakti sosial dengan membagikan sembako kepada warga sekitar gereja.">Bakti Sosial</option>
+                        <option value="Pertemuan Orang Muda Katolik (OMK) untuk pembinaan iman dan kebersamaan.">Pertemuan OMK</option>
+                        <option value="Pendalaman Kitab Suci bersama umat di aula gereja.">Pendalaman Kitab Suci</option>
+                        <option value="Kegiatan katekese bagi calon penerima Sakramen.">Katekese</option>
+                        <option value="Kerja bakti membersihkan lingkungan gereja sebelum perayaan besar.">Kerja Bakti Gereja</option>
+                        <option value="Rapat evaluasi kegiatan dan penyusunan agenda pelayanan bulan berikutnya.">Evaluasi Kegiatan</option>
+                        <option value="Pelayanan kunjungan kepada umat yang sedang sakit atau lanjut usia.">Kunjungan Umat</option>
+                        <option value="Persiapan perayaan Natal dan Paskah bersama seluruh panitia.">Persiapan Hari Raya Gereja</option>
+                    </select>
+                </div>
 
-                    <div class="form-group">
-                        <label>Tanggal Kegiatan</label>
-                        <input type="date" name="tanggal_kegiatan" class="form-control">
-                    </div>
+                <div class="form-group">
+                    <label>Tanggal Kegiatan</label>
+                    <select class="form-control" name="tanggal_kegiatan" id="tanggal_kegiatan">
+                        <option value="" selected disabled>-- Pilih Tanggal Kegiatan --</option>
+                        <option value="2026-07-05">05 Juli 2026</option>
+                        <option value="2026-07-12">12 Juli 2026</option>
+                        <option value="2026-07-19">19 Juli 2026</option>
+                        <option value="2026-07-26">26 Juli 2026</option>
+                        <option value="2026-08-02">02 Agustus 2026</option>
+                        <option value="2026-08-09">09 Agustus 2026</option>
+                        <option value="2026-08-16">16 Agustus 2026</option>
+                        <option value="2026-08-23">23 Agustus 2026</option>
+                        <option value="2026-08-30">30 Agustus 2026</option>
+                        <option value="2026-09-06">06 September 2026</option>
+                    </select>
+                </div>
 
                     <div class="form-group">
                         <label>Lokasi</label>
@@ -95,7 +119,18 @@ if(isset($_POST['tambah'])){
 
                     <div class="form-group">
                         <label>Kuota Peserta</label>
-                        <input type="number" name="kuota_peserta" class="form-control" placeholder="Masukkan Kuota Peserta">
+                        <select class="form-control" name="kuota_peserta" id="kuota_peserta">
+                            <option value="" selected disabled>-- Pilih Kuota Peserta --</option>
+                            <option value="10">10 Orang</option>
+                            <option value="20">20 Orang</option>
+                            <option value="30">30 Orang</option>
+                            <option value="40">40 Orang</option>
+                            <option value="50">50 Orang</option>
+                            <option value="75">75 Orang</option>
+                            <option value="100">100 Orang</option>
+                            <option value="150">150 Orang</option>
+                            <option value="200">200 Orang</option>
+                        </select>
                     </div>
 
                     <div class="form-group">

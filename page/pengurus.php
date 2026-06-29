@@ -37,7 +37,6 @@ if (isset($_GET['action'])) {
                         <th>JABATAN</th>
                         <th>PERIODE</th>
                         <th>STATUS PENGURUS</th>
-                        <th>NAMA DIVISI</th>
                         <th>ID DIVISI</th>
                         <th>ID USER</th>
                         <th>Aksi</th>
@@ -62,7 +61,6 @@ if (isset($_GET['action'])) {
                         <td><?= $result['jabatan']; ?></td>
                         <td><?= $result['periode']; ?></td>
                         <td><?= $result['status_pengurus']; ?></td>
-                        <td><?= $result['nama_divisi']; ?></td>
                         <td><?= $result['id_divisi']; ?></td>
                         <td><?= $result['id_user']; ?></td>
                         <td>
