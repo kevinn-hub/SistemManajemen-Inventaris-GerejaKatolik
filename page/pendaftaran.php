@@ -37,6 +37,8 @@ if (isset($_GET['action'])) {
                         <th>NAMA KEGIATAN</th>
                         <th>TANGGAL DAFTAR</th>
                         <th>STATUS</th>
+                        <th>ID ANGGOTA</th>
+                        <th>ID KEGIATAN</th>
                         <?php if($_SESSION['Role']=="admin"){ ?>
                         <th>Aksi</th>
                         <?php } ?>
@@ -56,6 +58,8 @@ if (isset($_GET['action'])) {
                         <td><?= $result['nama_kegiatan']; ?></td>
                         <td><?= $result['tanggal_daftar']; ?></td>
                         <td><?= $result['status']; ?></td>
+                        <td><?= $result['id_anggota']; ?></td>
+                        <td><?= $result['id_kegiatan']; ?></td>
                         <td>
                             <a href="index.php?page=pendaftaran&action=hapus&id=<?= $result['id_daftar'] ?>" title="">
                                 <span class="badge badge-danger">Hapus</span>

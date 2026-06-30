@@ -29,8 +29,8 @@ body{
 }
 
 .kop img{
-    width:140px;
-    height:140px;
+    width:90px;
+    height:90px;
     border-radius:50%;
     object-fit:cover;
     border:2px solid #000;

@@ -27,7 +27,9 @@ if(isset($_POST['tambah'])){
   $nama_kegiatan    = $_POST['nama_kegiatan'];
   $tanggal_daftar   = $_POST['tanggal_daftar'];
   $status           = $_POST['status'];
-    $insert = mysqli_query($koneksi,"INSERT INTO tbl_pendaftaran values ('$id_daftar','$nama_pendaftar','$nama_kegiatan','$tanggal_daftar','$status')"); 
+  $id_anggota       = $_POST['id_anggota'];
+  $id_kegiatan      = $_POST['id_kegiatan'];
+    $insert = mysqli_query($koneksi,"INSERT INTO tbl_pendaftaran values ('$id_daftar','$nama_pendaftar','$nama_kegiatan','$tanggal_daftar','$status', '$id_anggota', '  $id_kegiatan' )"); 
     if ($insert) {
         echo '<div class="alert alert-info-dismissible">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -55,6 +57,37 @@ if(isset($_POST['tambah'])){
                                         <label>ID Pendaftaran</label>
                                         <input type="text" name="id_daftar" value="<?= $hasilkode ?>" class="form-control" readonly>
                                     </div>
+                    
+                    <div class="form-group">
+                        <label>Anggota</label>
+                        <select name="id_anggota" class="form-control">
+                            <option value="">-- Pilih Anggota --</option>
+                            <?php
+                            $anggota = mysqli_query($koneksi,"SELECT * FROM tbl_anggota");
+                            while($a = mysqli_fetch_array($anggota)){
+                            ?>
+                            <option value="<?= $a['id_anggota']; ?>">
+                                <?= $a['nama_anggota']; ?>
+                            </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Kegiatan</label>
+                        <select name="id_kegiatan" class="form-control">
+                            <option value="">-- Pilih Kegiatan --</option>
+                            <?php
+                            $kegiatan = mysqli_query($koneksi,"SELECT * FROM tbl_kegiatan");
+                            while($k = mysqli_fetch_array($kegiatan)){
+                            ?>
+                            <option value="<?= $k['id_kegiatan']; ?>">
+                                <?= $k['nama_kegiatan']; ?>
+                            </option>
+                            <?php } ?>
+                        </select>
+                    </div>
 
                     <div class="form-group">
                         <label>Nama Pendaftar</label>
