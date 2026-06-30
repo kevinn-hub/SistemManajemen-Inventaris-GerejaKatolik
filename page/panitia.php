@@ -62,12 +62,14 @@
                             <td><?= $result['id_pengurus']; ?></td>
                             <td><?= $result['id_kegiatan']; ?></td>
                             <td>
+                                <?php if($_SESSION['Role']=="admin"){ ?>
                                 <a href="index.php?page=panitia&action=hapus&id=<?= $result['id_panitia'] ?>" title="">
                                     <span class="badge badge-danger">Hapus</span>
                                 </a>
                                 <a href="index.php?page=edit_panitia&id=<?= $result['id_panitia'] ?>" title="">
                                     <span class="badge badge-warning">Edit</span>
                                 </a>
+                                 <?php } ?>
                             </td>
                         </tr>
                     </tbody>
