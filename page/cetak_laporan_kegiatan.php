@@ -28,8 +28,8 @@ body{
 }
 
 .kop img{
-    width:130px;
-    height:130px;
+    width:140px;
+    height:140px;
     border-radius:50%;
     object-fit:cover;
     border:2px solid #000;

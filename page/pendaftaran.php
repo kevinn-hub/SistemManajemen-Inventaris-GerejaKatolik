@@ -37,7 +37,9 @@ if (isset($_GET['action'])) {
                         <th>NAMA KEGIATAN</th>
                         <th>TANGGAL DAFTAR</th>
                         <th>STATUS</th>
+                        <?php if($_SESSION['Role']=="admin"){ ?>
                         <th>Aksi</th>
+                        <?php } ?>
                     </tr>
                 </tread>
                 <?php

@@ -37,7 +37,9 @@
                             <th>JABATAN PANITIA</th>
                             <th>ID PENGURUS</th>
                             <th>ID KEGIATAN</th>
+                            <?php if($_SESSION['Role']=="admin"){ ?>
                             <th>Aksi</th>
+                            <?php } ?>
                     </tread>
                     <?php
                     $no = 0;

@@ -39,7 +39,9 @@ if (isset($_GET['action'])) {
                         <th>LOKASI</th>
                         <th>KUOTA PESERTA</th>
                         <th>STATUS KEGIATAN</th>
+                        <?php if($_SESSION['Role']=="admin"){ ?>
                         <th>Aksi</th>
+                         <?php } ?>
                     </tr>
                 </tread>
                 <?php
@@ -59,12 +61,14 @@ if (isset($_GET['action'])) {
                         <td><?= $result['kuota_peserta']; ?></td>
                         <td><?= $result['status_kegiatan']; ?></td>
                         <td>
+                            <?php if($_SESSION['Role']=="admin"){ ?>
                             <a href="index.php?page=kegiatan&action=hapus&id=<?= $result['id_kegiatan'] ?>" title="">
                                 <span class="badge badge-danger">Hapus</span>
                             </a>
                             <a href="index.php?page=edit_kegiatan&id=<?= $result['id_kegiatan'] ?>" title="">
                                 <span class="badge badge-warning">Edit</span>
                             </a>
+                            <?php } ?>
                         </td>
                     </tr>
                 </tbody>
