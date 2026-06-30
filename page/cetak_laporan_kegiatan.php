@@ -13,6 +13,7 @@ ORDER BY tbl_laporan.id_laporan DESC
 <html>
 <head>
 <title>Cetak Laporan</title>
+<HR>
 
 <style>
 body{
@@ -81,12 +82,12 @@ th{
     <button onclick="window.print()">Cetak</button>
 </div>
 
+<div>
+
+<img src="dist/img/Logo-Gereja.jpg">
+<link rel="stylesheet" href="../dist/css/custom.css">
 <div class="kop">
     <h2>GEREJA SANTA BERNADETH</h2>
-    <h3>LAPORAN KEGIATAN</h3>
-    <img src="dist/img/Logo-Gereja.jpg" alt="Logo Gereja">
-</div>
-
 <table>
 <tr>
     <th>No</th>
@@ -121,7 +122,7 @@ while($row = mysqli_fetch_assoc($laporan)){
         <b>Panitia:</b> {$d['nama_panitia']}<br>
         <b>Uraian:</b> {$d['uraian']}<br>
         <b>Kendala:</b> {$d['kendala']}<br>
-        <b>Hasil:</b> {$d['hasil']}<br><hr>
+        <b>Hasil:</b> {$d['hasil']}<br>
         ";
     }
 ?>
