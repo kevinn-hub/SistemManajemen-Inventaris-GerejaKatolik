@@ -3,7 +3,7 @@ include "config/koneksi.php";
 
 $laporan = mysqli_query($koneksi, "SELECT tbl_laporan.*, tbl_kegiatan.nama_kegiatan
 FROM tbl_laporan
-JOIN tbl_kegiatan 
+JOIN tbl_kegiatan
 ON tbl_laporan.id_kegiatan = tbl_kegiatan.id_kegiatan
 ORDER BY tbl_laporan.id_laporan DESC
 ");
@@ -16,8 +16,8 @@ ORDER BY tbl_laporan.id_laporan DESC
 
 <style>
 body{
-    font-family: Arial;
-    margin: 20px;
+    font-family: Arial, sans-serif;
+    margin:20px;
 }
 
 .kop{
@@ -25,6 +25,25 @@ body{
     border-bottom:2px solid #000;
     margin-bottom:15px;
     padding-bottom:10px;
+}
+
+.kop img{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #000;
+    margin:8px 0;
+}
+
+.kop h2{
+    margin:0;
+    font-size:24px;
+}
+
+.kop h3{
+    margin:5px 0 0;
+    font-size:18px;
 }
 
 table{
@@ -37,7 +56,7 @@ th, td{
     border:1px solid #000;
     padding:6px;
     font-size:12px;
-    vertical-align: top;
+    vertical-align:top;
 }
 
 th{
@@ -49,7 +68,9 @@ th{
 }
 
 @media print{
-    .print-btn{display:none;}
+    .print-btn{
+        display:none;
+    }
 }
 </style>
 </head>
@@ -63,6 +84,7 @@ th{
 <div class="kop">
     <h2>GEREJA SANTA BERNADETH</h2>
     <h3>LAPORAN KEGIATAN</h3>
+    <img src="dist/img/Logo-Gereja.jpg" alt="Logo Gereja">
 </div>
 
 <table>
@@ -84,9 +106,9 @@ while($row = mysqli_fetch_assoc($laporan)){
     tbl_pengurus.nama_pengurus,
     tbl_panitia.nama_panitia
     FROM tbl_detail_laporan
-    LEFT JOIN tbl_pengurus 
+    LEFT JOIN tbl_pengurus
     ON tbl_detail_laporan.id_pengurus = tbl_pengurus.id_pengurus
-    LEFT JOIN tbl_panitia 
+    LEFT JOIN tbl_panitia
     ON tbl_detail_laporan.id_panitia = tbl_panitia.id_panitia
     WHERE tbl_detail_laporan.id_laporan = '".$row['id_laporan']."'
     ");
