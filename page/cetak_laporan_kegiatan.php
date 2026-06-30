@@ -29,8 +29,8 @@ body{
 }
 
 .kop img{
-    width:90px;
-    height:90px;
+    width:130px;
+    height:140px;
     border-radius:50%;
     object-fit:cover;
     border:2px solid #000;
@@ -84,10 +84,11 @@ th{
 
 <div>
 
-<img src="dist/img/Logo-Gereja.jpg">
+
 <link rel="stylesheet" href="../dist/css/custom.css">
 <div class="kop">
     <h2>GEREJA SANTA BERNADETH</h2>
+    <h2>LAPORAN KEGIATAN</h2>
 <table>
 <tr>
     <th>No</th>
