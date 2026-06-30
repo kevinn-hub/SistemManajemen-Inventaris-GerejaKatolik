@@ -88,16 +88,6 @@ th{
 <link rel="stylesheet" href="../dist/css/custom.css">
 <div class="kop">
     <h2>GEREJA SANTA BERNADETH</h2>
-<<<<<<< HEAD
-    <h3>LAPORAN KEGIATAN TAHUNAN</h3>
-</div>
-
-=======
-    <h3>LAPORAN KEGIATAN</h3>
-    <img src="dist/img/Logo-Gereja.jpg" alt="Logo Gereja">
->>>>>>> a4ac5e4bc646aaab067c969fef72cef9f085f529
-</div>
-
 <table>
 <tr>
     <th>No</th>
