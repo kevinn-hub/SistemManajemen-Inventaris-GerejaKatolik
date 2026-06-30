@@ -60,7 +60,7 @@
 
         <div>
 
-          <img src="https://randomuser.me/api/portraits/women/20.jpg"
+          <img src="https://randomuser.me/api/portraits/men/4.jpg"
                style="width:100px;height:100px;border-radius:50%;object-fit:cover;">
 
           <h5 style="margin-top:10px;">Dika</h5>
